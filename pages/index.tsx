@@ -1,11 +1,49 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import React, { useState } from 'react';
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const initialFAQStates = Array.from({ length: 5 }, () => false); // Assuming you have 5 FAQs
+  const [faqStates, setFAQStates] = useState(initialFAQStates);
+
+  const handleIconClick = (index: number) => {
+    setFAQStates((prevStates) => {
+      const newStates = [...prevStates];
+      newStates[index] = !newStates[index];
+      return newStates;
+    });
+  };
+  const faqData = [
+    {
+      header: 'Profitability and Growth',
+      text:
+        'At Creon, we handpick cutting-edge AI projects and offer our community and token holders early access and investment opportunities. Our community actively contributes to the growth and profitability of these projects, creating a dynamic ecosystem of innovation and shared success.',
+    },
+    {
+      header: 'Transparent & Fair Decentralized Earnings',
+      text:
+        'At Creon, we handpick cutting-edge AI projects and offer our community and token holders early access and investment opportunities. Our community actively contributes to the growth and profitability of these projects, creating a dynamic ecosystem of innovation and shared success.',
+    },
+    {
+      header: 'Launching the future',
+      text:
+        'At Creon, we handpick cutting-edge AI projects and offer our community and token holders early access and investment opportunities. Our community actively contributes to the growth and profitability of these projects, creating a dynamic ecosystem of innovation and shared success.',
+    },
+    {
+      header: 'Limitless Possibilities of AI & Crypto',
+      text:
+        'At Creon, we handpick cutting-edge AI projects and offer our community and token holders early access and investment opportunities. Our community actively contributes to the growth and profitability of these projects, creating a dynamic ecosystem of innovation and shared success.',
+    },
+    // Add more FAQs as needed
+  ];
+
   return (
     <>
       <Head>
@@ -14,101 +52,290 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
+      {/* <main className={`${styles.main} ${inter.className}`}> */}
+      <div className={styles.maincontainer}>
+        <div>
+          <Navbar />
+        </div>
+        <div className={styles.sectionone}>
           <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+            <h1 className={styles.mainheader}>
+              The worlds first platform for Tokenizing AI blockchain projects
+            </h1>
+            <h6 className={styles.subheader}>
+              Hold the Creon Pass NFT and earn passive income from AI Tools
+            </h6>
           </div>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
+        {/* SECTION TWO */}
+        <div className={`${styles.sectiontwo} row`}>
+          <div className={`${styles.rightsection} col-6`}>
+            <h1 className={styles.mainheader}> CREON PASS NFT</h1>
+            <p className={styles.paragraph}>
+              The Creon NFT pass unlocks access to AI projects, the Creon
+              launchpad, and a ticket to generate passive income through
+              AI-driven tools
+            </p>
+            <div>
+              <p className={styles.boxtext}>
+                Pre-launch investment opportunities for upcoming AI projects
+              </p>
+              <p className={styles.boxtext}>
+                Free and early access to Creon built AI projects
+              </p>
+              <p className={styles.boxtext}>
+                Higher allocation limits on the Creon AI Launchpad
+              </p>
+              <p className={styles.boxtext}>
+                Revenue share distribution from Creon built AI projects
+              </p>
+            </div>
+            <div className="my-3">
+              <button className={styles.buybtn}>Buy Creon Pass</button>
+            </div>
+          </div>
+          <div className="col-6 d-flex justify-content-center align-items-center">
+            <Image src="/sword.svg" alt="logo" width={500} height={400} />
+          </div>
         </div>
+        {/* SECTION THREE */}
+        <div className={styles.sectiontwo}>
+          <div>
+            <h1 className={styles.mainheader}>PROFITING THROUGH</h1>
+            <div className={styles.subheadertwo}>
+              <h6 className={styles.innovationtext}>
+                AI INNOVATION & DECENTRALIZATION
+              </h6>
+            </div>
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+            <div className={`${styles.sectiontw} row`}>
+              <div className="col-6">
+                <Image src="/globe.svg" alt="logo" width={600} height={400} />
+              </div>
+              <div className={`${styles.rightside} col-6`}>
+                <h6 className={styles.ctnthree}>
+                  The dynamic community driven business model of the future.
+                </h6>
+                <p>
+                  At Creon, we blend the power of AI tools with the dynamic
+                  crypto and NFT markets, utilizing an innovative business model
+                  to drive profitability. This approach empowers our community,
+                  as our NFT and token holders directly benefit from the growth
+                  and prosperity of the Creon network, creating a win-win
+                  scenario for both our community and for the projects we
+                  launch.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+        {/* SECTION FOUR */}
+        <div className={styles.sectiontwo}>
+          <div className="row">
+            <div className="col-6">
+              <h1 className={styles.fourheader}>
+                Our vision is to support the innovation of AI blockchain
+                projects
+                <span className={styles.fourctn}>
+                  {" "}
+                  while prioritizing communities and democratizing profits{" "}
+                </span>
+              </h1>
+              <div className="d-flex justify-content-end">
+                <Image src="/vision.svg" alt="logo" width={500} height={400} />
+              </div>
+            </div>
+            <div className="col-6">
+              
+              <div>
+                {faqData.map((faq, index) => (
+                  <div key={index} className={styles.faq}>
+                    <div className={styles.faqheader}>
+                      <div className="d-flex align-items-center">
+                        <Image src="/earnings.png" alt="logo" width={100} height={100} />
+                        <h3 className={styles.faqheading}>{faq.header}</h3>
+                      </div>
+
+                      <div className={styles.icon} onClick={() => handleIconClick(index)}>
+                        <MdKeyboardArrowUp />
+                      </div>
+                    </div>
+
+                    {faqStates[index] && (
+                      <div className="d-flex justify-content-center">
+                        <p className={styles.faqtexts}>{faq.text}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+               
+            </div>
+          </div>
+        </div>
+        {/* SECTION FIVE */}
+        <div className={`${styles.sectiontwo} justify-content-cente`}>
+          <div>
+            <div className={styles.boxcontainer}>
+              <div className={styles.pergrid}>
+                <div>
+                  <sup className={styles.superscript}>coming soon</sup>
+                  <div className={styles.ctntop}>
+                    <h3 className={styles.pergridheader}>TOKEN</h3>
+                    <p className={styles.pergridctn}>
+                      The Gateway token to the world of AI
+                    </p>
+                  </div>
+                  <Image src="/token.svg" alt="logo" width={250} height={200} />
+                  <p className={styles.pergridtext}>
+                    Set to debut in the latter half of 2024, the CREON token
+                    serves as the pioneering link between cutting-edge AI
+                    initiatives and blockchain technology. This innovative token
+                    provides NFT and token holders with unparalleled access to
+                    our Launchpad, AI tools, and exclusive pre-launch investment
+                    prospects.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.pergrid}>
+                <div>
+                  <div className={styles.ctntop}>
+                    <h3 className={styles.pergridheader}>REVENUE</h3>
+                    <p className={styles.pergridctn}>
+                      Driving income and growth through decentralization
+                    </p>
+                  </div>
+                  <Image
+                    src="/revenue.svg"
+                    alt="logo"
+                    width={250}
+                    height={200}
+                  />
+                  <p className={styles.pergridtext}>
+                    Set to debut in the latter half of 2024, the CREON token
+                    serves as the pioneering link between cutting-edge AI
+                    initiatives and blockchain technology. This innovative token
+                    provides NFT and token holders with unparalleled access to
+                    our Launchpad, AI tools, and exclusive pre-launch investment
+                    prospects.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.pergrid}>
+                <div>
+                  <div className={styles.ctntop}>
+                    <h3 className={styles.pergridheader}>LAUNCHPAD</h3>
+                    <p className={styles.pergridctn}>
+                      Driving the future of AI Innovation
+                    </p>
+                  </div>
+                  <Image
+                    src="/launchpad.svg"
+                    alt="logo"
+                    width={250}
+                    height={200}
+                  />
+                  <p className={styles.pergridtext}>
+                    Set to debut in the latter half of 2024, the CREON token
+                    serves as the pioneering link between cutting-edge AI
+                    initiatives and blockchain technology. This innovative token
+                    provides NFT and token holders with unparalleled access to
+                    our Launchpad, AI tools, and exclusive pre-launch investment
+                    prospects.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* SECTION SIX */}
+        <div className={styles.sectionsix}>
+          <div className={styles.footerbackground}>
+            <div className={styles.lstsection}>
+              <div className={styles.lstctnbg}>
+                <h1 className={styles.lastheader}>
+                  AI Prospects, Market Size, and Development Pace
+                </h1>
+                <p className={styles.lstctntext}>
+                  The AI market is one of the most dynamically growing areas of
+                  technology. According to reports, the global AI market is
+                  expected to reach $190.61 billion by 2025, with a CAGR
+                  (Compound Annual Growth Rate) of 36.6%. The key drivers behind
+                  this growth include advancements in machine learning,
+                  increasing demand for big data analytics, and growing adoption
+                  of AI technology across various sectors such as healthcare,
+                  finance, and transportation.
+                </p>
+              </div>
+              <div className={styles.imagecontainer}>
+                <Image
+                  src="/ai.svg"
+                  alt="logo"
+                  width={550}
+                  height={200}
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={styles.lstsection}>
+              <div className={styles.lstctnbg}>
+                <h1 className={styles.lastheader}>AI Tools and Market</h1>
+                <p className={styles.lstctntext}>
+                  The AI market is one of the most dynamically growing areas of
+                  technology. According to reports, the global AI market is
+                  expected to reach $190.61 billion by 2025, with a CAGR
+                  (Compound Annual Growth Rate) of 36.6%. The key drivers behind
+                  this growth include advancements in machine learning,
+                  increasing demand for big data analytics, and growing adoption
+                  of AI technology across various sectors such as healthcare,
+                  finance, and transportation.
+                </p>
+              </div>
+              <div className={styles.imagecontainer}>
+                <Image
+                  src="/connect.svg"
+                  alt="logo"
+                  width={550}
+                  height={200}
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={styles.lstsection}>
+              <div className={styles.lstctnbg}>
+                <h1 className={styles.lastheader}>
+                  AI, Crypto, and NFT Market
+                </h1>
+                <p className={styles.lstctntext}>
+                  The AI market is one of the most dynamically growing areas of
+                  technology. According to reports, the global AI market is
+                  expected to reach $190.61 billion by 2025, with a CAGR
+                  (Compound Annual Growth Rate) of 36.6%. The key drivers behind
+                  this growth include advancements in machine learning,
+                  increasing demand for big data analytics, and growing adoption
+                  of AI technology across various sectors such as healthcare,
+                  finance, and transportation.
+                </p>
+              </div>
+              <div className={styles.imagecontainer}>
+                <Image
+                  src="/crypto.svg"
+                  alt="logo"
+                  width={550}
+                  height={200}
+                  className={styles.image}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* FOOTER SECTION */}
+        <div>
+          <Footer />
+        </div>
+      </div>
+      {/* </main> */}
     </>
-  )
+  );
 }
