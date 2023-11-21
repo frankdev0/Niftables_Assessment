@@ -41,7 +41,6 @@ export default function Home() {
       text:
         'At Creon, we handpick cutting-edge AI projects and offer our community and token holders early access and investment opportunities. Our community actively contributes to the growth and profitability of these projects, creating a dynamic ecosystem of innovation and shared success.',
     },
-    // Add more FAQs as needed
   ];
 
   return (
@@ -53,12 +52,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <main className={`${styles.main} ${inter.className}`}> */}
+      <div className={styles.containerbg}>
       <div className={styles.maincontainer}>
         <div>
           <Navbar />
         </div>
-        <div className={styles.sectionone}>
-          <div>
+        <div className={`${styles.sectionone} row`}>
+          <div className='col-12 col-md-7 col-lg-10'>
             <h1 className={styles.mainheader}>
               The worlds first platform for Tokenizing AI blockchain projects
             </h1>
@@ -67,8 +67,41 @@ export default function Home() {
             </h6>
           </div>
         </div>
+        </div>
         {/* SECTION TWO */}
-        <div className={`${styles.sectiontwo} row`}>
+        <div className={`${styles.sectiontwogrid} row`}>
+         
+          <div className='col-12 col-md-6 col-lg-6'>
+            <h1 className={styles.creonheader}> CREON PASS NFT</h1>
+            <p className={styles.paragraph}>
+              The Creon NFT pass unlocks access to AI projects, the Creon
+              launchpad, and a ticket to generate passive income through
+              AI-driven tools
+            </p>
+            <div>
+              <p className={styles.boxtext}>
+                Pre-launch investment opportunities for upcoming AI projects
+              </p>
+              <p className={styles.boxtext}>
+                Free and early access to Creon built AI projects
+              </p>
+              <p className={styles.boxtext}>
+                Higher allocation limits on the Creon AI Launchpad
+              </p>
+              <p className={styles.boxtext}>
+                Revenue share distribution from Creon built AI projects
+              </p>
+            </div>
+            <div className="my-3">
+              <button className={styles.buybtn}>Buy Creon Pass</button>
+            </div>
+          </div>
+          
+          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+          <Image src="/sword.svg" alt="logo" width={500} height={400} />
+          </div>
+        </div>
+        {/* <div className={`${styles.sectiontwo} row`}>
           <div className={`${styles.rightsection} col-6`}>
             <h1 className={styles.mainheader}> CREON PASS NFT</h1>
             <p className={styles.paragraph}>
@@ -97,42 +130,68 @@ export default function Home() {
           <div className="col-6 d-flex justify-content-center align-items-center">
             <Image src="/sword.svg" alt="logo" width={500} height={400} />
           </div>
-        </div>
+        </div> */}
         {/* SECTION THREE */}
-        <div className={styles.sectiontwo}>
-          <div>
+        
+          
+          <div className={`${styles.ctnpadding} row`}>
+          <div className="col-12 ">
             <h1 className={styles.mainheader}>PROFITING THROUGH</h1>
             <div className={styles.subheadertwo}>
               <h6 className={styles.innovationtext}>
                 AI INNOVATION & DECENTRALIZATION
               </h6>
             </div>
-
-            <div className={`${styles.sectiontw} row`}>
-              <div className="col-6">
-                <Image src="/globe.svg" alt="logo" width={600} height={400} />
+            </div>
+            </div>
+            <div className={styles.ctnpad}>
+            <div className={`${styles.rightsidecontainer} row`}>
+              <div className='col-12 col-lg-6 d-flex justify-content-center'>
+              <Image src="/globe.svg" alt="logo" width={600} height={400} className={styles.respimage} />
               </div>
-              <div className={`${styles.rightside} col-6`}>
+            
+            <div className={`col-12 col-lg-6`}>
+              <div className={styles.rightside}>
+              <h6 className={styles.ctnthree}> The dynamic community driven business model of the future.</h6>
+              <p className={styles.ctnthreetext}>
+                  At Creon, we blend the power of AI tools with the dynamic
+                  crypto and NFT markets, utilizing an innovative business model
+                  to drive profitability.This approach empowers our community,
+                  as our NFT and token holders directly benefit from the growth
+                  and prosperity of the Creon network, creating a win-win
+                  scenario for both our community and for the projects we
+                  launch.
+                </p>
+                </div>
+            </div>
+            </div>
+            {/* <div className='row'>
+              <div className="col-6">
+                <Image src="/globe.svg" alt="logo" width={400} height={400} />
+              </div>
+              <div className= "col-6">
+              <div className={styles.rightside}>
                 <h6 className={styles.ctnthree}>
                   The dynamic community driven business model of the future.
                 </h6>
-                <p>
+                <p className={styles.ctnthreetext}>
                   At Creon, we blend the power of AI tools with the dynamic
                   crypto and NFT markets, utilizing an innovative business model
-                  to drive profitability. This approach empowers our community,
+                  to drive profitability.This approach empowers our community,
                   as our NFT and token holders directly benefit from the growth
                   and prosperity of the Creon network, creating a win-win
                   scenario for both our community and for the projects we
                   launch.
                 </p>
               </div>
-            </div>
-          </div>
+              </div>
+            </div> */}
+          
         </div>
         {/* SECTION FOUR */}
         <div className={styles.sectiontwo}>
           <div className="row">
-            <div className="col-6">
+            <div className="col-12 col-lg-6">
               <h1 className={styles.fourheader}>
                 Our vision is to support the innovation of AI blockchain
                 projects
@@ -141,31 +200,39 @@ export default function Home() {
                   while prioritizing communities and democratizing profits{" "}
                 </span>
               </h1>
-              <div className="d-flex justify-content-end">
-                <Image src="/vision.svg" alt="logo" width={500} height={400} />
+              <div className={styles.visionimg}>
+                <Image src="/vision.svg" alt="logo" width={600} height={400} className={styles.respimage}/>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-lg-6 d-flex justify-conent-nd">
               
-              <div>
+              <div className="d-flex flex-column align-items-ed my-2">
                 {faqData.map((faq, index) => (
                   <div key={index} className={styles.faq}>
                     <div className={styles.faqheader}>
                       <div className="d-flex align-items-center">
                         <Image src="/earnings.png" alt="logo" width={100} height={100} />
-                        <h3 className={styles.faqheading}>{faq.header}</h3>
+                        {/* <h3 className={styles.faqheading}>{faq.header}</h3> */}
                       </div>
-
+                      <div className={styles.faqcontainer}>
+                      <div className={styles.headingcontainer}>
+                      <h3 className={styles.faqheading}>{faq.header}</h3>
                       <div className={styles.icon} onClick={() => handleIconClick(index)}>
                         <MdKeyboardArrowUp />
                       </div>
+                      </div>
+                      {faqStates[index] && (
+                      
+                        <div className={styles.faqtexts}>
+                        <p >{faq.text}</p>
+                        </div>
+                       
+                      
+                    )}
+                      </div>
                     </div>
 
-                    {faqStates[index] && (
-                      <div className="d-flex justify-content-center">
-                        <p className={styles.faqtexts}>{faq.text}</p>
-                      </div>
-                    )}
+                   
                   </div>
                 ))}
               </div>
@@ -174,78 +241,51 @@ export default function Home() {
           </div>
         </div>
         {/* SECTION FIVE */}
-        <div className={`${styles.sectiontwo} justify-content-cente`}>
+        <div className={`${styles.sectiontwo} ${styles.sectiontwoo} justify-content-cente`}>
           <div>
             <div className={styles.boxcontainer}>
-              <div className={styles.pergrid}>
-                <div>
-                  <sup className={styles.superscript}>coming soon</sup>
-                  <div className={styles.ctntop}>
-                    <h3 className={styles.pergridheader}>TOKEN</h3>
-                    <p className={styles.pergridctn}>
-                      The Gateway token to the world of AI
-                    </p>
-                  </div>
-                  <Image src="/token.svg" alt="logo" width={250} height={200} />
-                  <p className={styles.pergridtext}>
-                    Set to debut in the latter half of 2024, the CREON token
-                    serves as the pioneering link between cutting-edge AI
-                    initiatives and blockchain technology. This innovative token
-                    provides NFT and token holders with unparalleled access to
-                    our Launchpad, AI tools, and exclusive pre-launch investment
-                    prospects.
-                  </p>
+            <div className={styles.pergrid}>
+              <div className={styles.pergridContainer}>
+                <div className={styles.superscript}>COMING SOON</div>
+                <div className={styles.ctntop}>
+                  <h3 className={styles.pergridheader}>TOKEN</h3>
+                  <p className={styles.pergridctn}>The Gateway token to the world of AI</p>
                 </div>
+                <Image src="/token.svg" alt="logo" width={300} height={200} />
+                <p className={styles.pergridtext}>
+                  Set to debut in the latter half of 2024, the CREON token serves as the pioneering link between cutting-edge AI initiatives and blockchain technology. This innovative token provides NFT and token holders with unparalleled access to our Launchpad, AI tools, and exclusive pre-launch investment prospects.
+                </p>
               </div>
+            </div>
+            <div className={styles.pergrid}>
+              <div className={styles.pergridContainer}>
+                <div className={styles.superscriptt}>COMING SOON</div>
+                <div className={styles.ctntop}>
+                  <h3 className={styles.pergridheader}>REVENUE</h3>
+                  <p className={styles.pergridctn}> Driving income and growth through decentralization</p>
+                </div>
+                <Image src="/revenue.svg" alt="logo" width={300} height={200} />
+                <p className={styles.pergridtext}>
+                CREON NFT and token holders are integral participants in the profit-sharing from our launched AI-based enterprises. We support the development of AI tools, ensuring a steady revenue stream, all while allowing early investors to enjoy the benefits of their support.
+                </p>
+              </div>
+            </div>
+            <div className={styles.pergrid}>
+              <div className={styles.pergridContainer}>
+                <div className={styles.superscript}>COMING SOON</div>
+                <div className={styles.ctntop}>
+                  <h3 className={styles.pergridheader}>LAUNCHPAD</h3>
+                  <p className={styles.pergridctn}>Driving the future of AI Innovation</p>
+                </div>
+                <Image src="/launchpad.svg" alt="logo" width={300} height={200} />
+                <p className={styles.pergridtext}>
+                The Creon AI Launchpad, an essential component of our initiative, represents a groundbreaking opportunity in the realm of AI and blockchain. It provides the first known platform for acquiring allocations in tokenized AI projects, offering our community of NFT and CREON token holders early access to innovative and promising AI endeavors.
+                </p>
+              </div>
+            </div>
 
-              <div className={styles.pergrid}>
-                <div>
-                  <div className={styles.ctntop}>
-                    <h3 className={styles.pergridheader}>REVENUE</h3>
-                    <p className={styles.pergridctn}>
-                      Driving income and growth through decentralization
-                    </p>
-                  </div>
-                  <Image
-                    src="/revenue.svg"
-                    alt="logo"
-                    width={250}
-                    height={200}
-                  />
-                  <p className={styles.pergridtext}>
-                    Set to debut in the latter half of 2024, the CREON token
-                    serves as the pioneering link between cutting-edge AI
-                    initiatives and blockchain technology. This innovative token
-                    provides NFT and token holders with unparalleled access to
-                    our Launchpad, AI tools, and exclusive pre-launch investment
-                    prospects.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.pergrid}>
-                <div>
-                  <div className={styles.ctntop}>
-                    <h3 className={styles.pergridheader}>LAUNCHPAD</h3>
-                    <p className={styles.pergridctn}>
-                      Driving the future of AI Innovation
-                    </p>
-                  </div>
-                  <Image
-                    src="/launchpad.svg"
-                    alt="logo"
-                    width={250}
-                    height={200}
-                  />
-                  <p className={styles.pergridtext}>
-                    Set to debut in the latter half of 2024, the CREON token
-                    serves as the pioneering link between cutting-edge AI
-                    initiatives and blockchain technology. This innovative token
-                    provides NFT and token holders with unparalleled access to
-                    our Launchpad, AI tools, and exclusive pre-launch investment
-                    prospects.
-                  </p>
-                </div>
-              </div>
+              
+              
             </div>
           </div>
         </div>
@@ -272,7 +312,7 @@ export default function Home() {
                 <Image
                   src="/ai.svg"
                   alt="logo"
-                  width={550}
+                  width={400}
                   height={200}
                   className={styles.image}
                 />

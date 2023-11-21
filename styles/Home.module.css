@@ -6,11 +6,17 @@
   min-height: 100vh;
 }
 
+.containerbg{
+  background-color: #000000;
+}
+
 .maincontainer{
-  background: url('/heroimage.png');
-  object-fit: cover;
+  background: url('/heroimage.svg');
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Use viewport height for full screen */
+ 
 }
 
 .navcontainer{
@@ -60,6 +66,74 @@ padding-left: 1.4rem;
   padding: 1.5rem 0.5rem;
 }
 
+.navbtntwo{
+  display: none;
+}
+
+.mobilemenu{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: #000000;
+}
+
+.barscontainer{
+  display: none;
+}
+
+.fabars{
+  font-size: 1.4rem;
+}
+
+.close{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  background-color: #3D8BFF;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.closeicon{
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.mobileheader{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.mobilelinks{
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding-left: 3rem;
+}
+
+.mobilelink{
+  padding: 1rem;
+  border-top: 1px solid #13171D;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.supp{
+  font-size: 0.5em; 
+  vertical-align: super; 
+  color: #AB23FF;
+}
+
+.btnmedia{
+  display: none;
+}
+
+
 .sectionone{
 display: flex;
 padding-top: 10rem;
@@ -72,6 +146,15 @@ padding-left: 6rem;
   font-weight: 700;
   font-size: 3rem;
   color: #ffffff;
+  padding-right: 6rem;
+}
+
+.creonheader{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+  width: 400px;
+  color: #ffffff; 
 }
 
 .subheader{
@@ -111,19 +194,45 @@ padding-left: 6rem;
   -webkit-background-clip: text; /* WebKit/Blink browsers */
   color: transparent;
   background-clip: text; /* Standard syntax */
-  padding: 10px 0;
-  margin: 0.5rem 0;
-  width: 500px;
+  padding: 20px 0;
+  margin: 1rem 0;
+
+  border-top: 1px solid #13171D;
+}
+
+.sectiontwogrid{
+  padding-left: 6rem;
+  margin-top: 5rem;
+  background-color: #000000;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .boxtext{
   color: #ffffff;
-  display: inline-block;
   padding: 0.3rem 0.4rem;
   font-size: 1.125rem;
   border: 1px solid #13171D;
   border-radius: 5px;
   margin: 0.3rem 0;
+ display: inline-block;
+}
+
+.containerpadding{
+  padding-left: 6rem;
+  margin-top: 5rem;
+  background-color: #000000;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.ctnpadding{
+  padding-left: 6rem;
+  margin-top: 5rem;
+}
+
+.ctnpad{
+  padding-left: 6rem;
 }
 
 .sectiontwo{
@@ -135,9 +244,11 @@ padding-left: 6rem;
   padding-bottom: 2rem;
   }
 
-  /* .rightsection{
-    
-  } */
+
+  .sectiontwoctn{
+    display: inline-block;
+    flex-direction: column;
+  }
 
   .buybtn{
     background: linear-gradient(90deg, #3D8BFF 0%, #AB23FF 100%);
@@ -154,31 +265,48 @@ padding-left: 6rem;
     padding: 1rem 0.5rem;
   }
 
-  .mainheader{
-    padding-right: 6rem;
-  }
+
 
   .subheadertwo {
     display: flex;
     justify-content: center;
   }
 
+  .rightsidecontainer{
+    display: flex;
+    align-items: center;
+  }
+
   .rightside{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: #ffffff;
-    width: 28%;
+    width: 80%;
     border-left: 1px solid #13171D;
     border-right: 1px solid #13171D;
     margin-left: 2rem;
+    padding: 1rem;
   }
 
   .ctnthree{
     display: flex;
     justify-content: flex-start;
     font-size: 1.2rem;
+    font-weight: 700;
     padding-bottom: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .ctnthreetext{
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
   }
 
   /* SECTION FOUR */
@@ -190,6 +318,11 @@ padding-left: 6rem;
     width: 430px;
   }
 
+  .visionimg{
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .fourctn{
     background: linear-gradient(90deg, #3D8BFF 0%, #AB23FF 100%);
     -webkit-background-clip: text; /* WebKit/Blink browsers */
@@ -199,30 +332,37 @@ padding-left: 6rem;
 
   .faq{
     color: #ffffff;
-    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
   }
 
   .faqheading{
-    margin-left: 1.5rem;
-    font-size: 1.4rem;
+    /* margin-left: 3.5rem; */
+    font-size: 1.2rem;
+    font-weight: 700;
   }
 
+  .headingcontainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
   .icon{
-    padding-right: 8.5rem;
     cursor: pointer;
   }
 
   .faqtexts{
-    display: flex;
-    justify-content: flex-start;
     font-size: 0.85rem;
+  }
+
+  .faqcontainer{
     width: 350px;
+    margin-left: 1.5rem;
   }
 
   .faqheader{
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
   }
 
@@ -244,10 +384,38 @@ padding-left: 6rem;
     display: flex;
     align-items: center;
     background-color: #13171D;
-    border-radius: 10px; 
+    border-radius: 6px; 
     padding: 20px 0; 
-    width: 300px;
-    height: 450px;
+    width: 350px;
+    height: 470px;
+    position: relative;
+  }
+
+  .pergridContainer {
+    position: relative;
+  }
+  
+  .superscript {
+    position: absolute;
+    top: -35px; 
+    right: -20px; 
+    font-size: 0.65rem; 
+    color: #000000; 
+    background-color: #ffffff;
+    font-weight: 700;
+    border-radius: 10PX;
+    padding: 0.2rem;
+  }
+  .superscriptt {
+    position: absolute;
+    top: -45px; 
+    right: 30px; 
+    font-size: 0.65rem; 
+    color: #000000; 
+    background-color: #ffffff;
+    font-weight: 700;
+    border-radius: 10PX;
+    padding: 0.2rem;
   }
   
   .pergridheader, .pergridtext, .pergridctn {
@@ -259,9 +427,9 @@ padding-left: 6rem;
   }
 
   .pergridtext{
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     padding-left: 20px;
-    width: 250px;
+    width: 300px;
   }
 
   .pergridctn{
@@ -271,11 +439,6 @@ padding-left: 6rem;
     background-clip: text; /* Standard syntax */
   }
 
-  .superscript {
-    font-size: 0.8em; /* Adjust the font size as needed */
-    vertical-align: super; /* Align the superscript */
-    color: #fff; /* Adjust the color as needed */
-  }
 
   .footerbackground{
     background: black;
@@ -299,7 +462,7 @@ padding-left: 6rem;
     background-color: #13171D;
     padding: 1rem;
     height: 250px;
-    width: 90%;
+    width: 100%;
   }
 
   .sectionsix{
@@ -345,3 +508,191 @@ padding-left: 6rem;
       font-size: 0.75rem;
     }
   
+
+    /* MEDIA QUERIES FOR MOBILE AND TABLETS */
+
+    @media  screen and (max-width: 1024px) {
+      .barscontainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 0rem 0.4rem;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      .rightmenu{
+        display: none;
+      }
+      .navbtntwo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 25px;
+        border-radius: 5px;
+        border: none;
+        color: #ffffff;
+        background-color: inherit;
+        border: 2px solid #ffffff;
+        cursor: pointer;
+        padding: 1.5rem 0.5rem;
+        margin-right: 1rem;
+      }
+      .btnmedia{
+        display: flex;
+      }
+
+      .sectionone{
+        display: flex;
+        padding-top: 7rem;
+        width: 100%;
+        padding-left: 2rem;
+        }
+
+        .maincontainer{
+          height: auto; /* Use viewport height for full screen */
+         
+        }
+        .boxcontainer {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .sectiontwogrid{
+          display: flex !important;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+          padding-left: 0rem;
+          margin-top: 5rem;
+          margin: auto;
+          width: 100%;
+   
+        }
+        .rightsidecontainer{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .respimage{
+          display: flex;
+          justify-content: center;
+          width: 95%;
+          object-fit: cover;
+        }
+
+        .rightside{
+
+          width: 100%;
+          margin-top: 3rem;
+  
+        }
+
+        .containerpadding{
+          padding-left: 1rem;
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+
+        .lstctnbg{
+          height: auto;
+          width: 100%;
+        }
+
+        .image {
+          object-fit: cover; /* Adjust based on your requirements */
+          width: 100%;
+          height: 400px;
+        }
+        .creonheader{
+          width: 100%;
+        }
+
+        .ctnpadding{
+          padding-left: 1rem;
+          padding-bottom: 1rem;
+          margin-top: 2rem;
+          display: flex;
+          justify-content: center;
+        }
+        
+        .ctnpad{
+          padding-left: 0rem;
+        }
+
+        .mainheader{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          padding-left: 0rem;
+        }
+        .rightside{
+          margin-left: 0rem;
+        }
+        .sectiontwo{
+          padding-left: 1rem;
+          margin-top: 2rem;
+          }
+
+          .fourheader{
+            font-size: 1rem;
+            width: 100%;
+          }
+          .faqcontainer{
+            width: 100%;
+            margin-left: 0rem;
+          }
+          .sectiontwoo{
+            display: flex;
+            justify-content: center;
+          }
+    }
+
+    @media  screen and (max-width: 768px) {
+      .boxcontainer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .creonheader{
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .buybtn{
+        width: 100%;
+      }
+
+      .mainheader{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding-left: 0rem;
+        font-size: 2.3rem;
+      }
+      .fourheader{
+        font-size: 1.5rem;
+        width: 100%;
+      }
+
+      .visionimg{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+      }
+
+      /* .paragraph{
+      
+        display: flex;
+        margin: auto;
+        justify-content: center;
+      } */
+    }
