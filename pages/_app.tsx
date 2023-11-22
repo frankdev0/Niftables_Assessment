@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import localFont from '@next/font/local'
+import localFont from "next/font/local"
 
 const myFont = localFont({ src: './fonts/MonumentExtended-Regular.woff2' })
 const myFont2 = localFont({ src: './fonts/Satoshi-Bold.woff2' })
