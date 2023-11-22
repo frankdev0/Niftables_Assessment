@@ -12,8 +12,7 @@ export default function SliderOne() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "80px",
+    centerPadding: "150px",
     autoplay: true,
     autoplaySpeed: 3000,
   };
