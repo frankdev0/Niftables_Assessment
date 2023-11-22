@@ -6,6 +6,8 @@ import styles from "@/styles/Home.module.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import SliderTwo from "@/components/slidertwo";
+import SliderOne from "@/components/sliderone";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,23 +41,47 @@ export default function Home() {
     },
   ];
 
+  const comingsoon = [
+    {
+      supscript: "COMING SOON",
+      header: "TOKEN",
+      subheader: "The Gateway token to the world of AI",
+      image: "/token.svg",
+      text: "Set to debut in the latter half of 2024, the CREON token serves as the pioneering link between cutting-edge AI initiatives and blockchain technology. This innovative token provides NFT and token holders with unparalleled access to our Launchpad, AI tools, and exclusive pre-launch investment prospects.",
+    },
+    {
+      supscript: "COMING SOON",
+      header: "REVENUE",
+      subheader: "Driving income and growth through decentralization",
+      image: "/revenue.svg",
+      text: "Set to debut in the latter half of 2024, the CREON token serves as the pioneering link between cutting-edge AI initiatives and blockchain technology. This innovative token provides NFT and token holders with unparalleled access to our Launchpad, AI tools, and exclusive pre-launch investment prospects.",
+    },
+    {
+      supscript: "COMING SOON",
+      header: "LAUNCH PAD",
+      subheader: "The Gateway token to the world of AI",
+      image: "/launchpad.svg",
+      text: "Set to debut in the latter half of 2024, the CREON token serves as the pioneering link between cutting-edge AI initiatives and blockchain technology. This innovative token provides NFT and token holders with unparalleled access to our Launchpad, AI tools, and exclusive pre-launch investment prospects.",
+    },
+  ];
+
   const aitools = [
     {
-      heading:"AI Prospects, Market Size, and Development Pace",
-      text:"The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
-      image:"/ai.svg"
+      heading: "AI Prospects, Market Size, and Development Pace",
+      text: "The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
+      image: "/ai.svg",
     },
     {
-      heading:"AI Tools and Market",
-      text:"The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
-      image:"/connect.svg",
+      heading: "AI Tools and Market",
+      text: "The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
+      image: "/connect.svg",
     },
     {
-      heading:" AI, Crypto, and NFT Market",
-      text:"The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
-      image:"/crypto.svg",
-    }
-  ]
+      heading: " AI, Crypto, and NFT Market",
+      text: "The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
+      image: "/crypto.svg",
+    },
+  ];
 
   return (
     <>
@@ -157,6 +183,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className={`${styles.respview} my-5`}>
+          <SliderTwo />
+        </div>
         {/* SECTION FOUR */}
         <div className={styles.sectiontwo}>
           <div className="row">
@@ -216,109 +245,65 @@ export default function Home() {
           </div>
         </div>
         {/* SECTION FIVE */}
-        <div
-          className={`${styles.sectiontwo} ${styles.sectiontwoo} justify-content-cente`}
-        >
-          <div>
-            <div className={styles.boxcontainer}>
-              <div className={styles.pergrid}>
-                <div className={styles.pergridContainer}>
-                  <div className={styles.superscript}>COMING SOON</div>
-                  <div className={styles.ctntop}>
-                    <h3 className={styles.pergridheader}>TOKEN</h3>
-                    <p className={styles.pergridctn}>
-                      The Gateway token to the world of AI
-                    </p>
+        <div className={styles.respviewtwo}>
+          <div
+            className={`${styles.sectiontwo} ${styles.sectiontwoo} justify-content-cente`}
+          >
+            <div>
+              <div className={styles.boxcontainer}>
+                {comingsoon.map((item, index) => (
+                  <div key={index} className={styles.cardcontainer}>
+                    <div className={styles.card}>
+                      <div className={styles.comingSoon}>{item.supscript}</div>
+                      <div className={styles.topctn}>
+                        <h3 className={styles.pergridheader}>{item.header}</h3>
+                        <h6 className={styles.pergridctn}>{item.subheader}</h6>
+                      </div>
+                      <div>
+                        <Image
+                          src={item.image}
+                          alt="token"
+                          width={250}
+                          height={180}
+                        />
+                      </div>
+                      <div>
+                        <p className={styles.pergridtext}>{item.text}</p>
+                      </div>
+                    </div>
                   </div>
-                  <Image src="/token.svg" alt="logo" width={300} height={200} />
-                  <p className={styles.pergridtext}>
-                    Set to debut in the latter half of 2024, the CREON token
-                    serves as the pioneering link between cutting-edge AI
-                    initiatives and blockchain technology. This innovative token
-                    provides NFT and token holders with unparalleled access to
-                    our Launchpad, AI tools, and exclusive pre-launch investment
-                    prospects.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.pergrid}>
-                <div className={styles.pergridContainer}>
-                  <div className={styles.superscriptt}>COMING SOON</div>
-                  <div className={styles.ctntop}>
-                    <h3 className={styles.pergridheader}>REVENUE</h3>
-                    <p className={styles.pergridctn}>
-                      {" "}
-                      Driving income and growth through decentralization
-                    </p>
-                  </div>
-                  <Image
-                    src="/revenue.svg"
-                    alt="logo"
-                    width={300}
-                    height={200}
-                  />
-                  <p className={styles.pergridtext}>
-                    CREON NFT and token holders are integral participants in the
-                    profit-sharing from our launched AI-based enterprises. We
-                    support the development of AI tools, ensuring a steady
-                    revenue stream, all while allowing early investors to enjoy
-                    the benefits of their support.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.pergrid}>
-                <div className={styles.pergridContainer}>
-                  <div className={styles.superscript}>COMING SOON</div>
-                  <div className={styles.ctntop}>
-                    <h3 className={styles.pergridheader}>LAUNCHPAD</h3>
-                    <p className={styles.pergridctn}>
-                      Driving the future of AI Innovation
-                    </p>
-                  </div>
-                  <Image
-                    src="/launchpad.svg"
-                    alt="logo"
-                    width={300}
-                    height={200}
-                  />
-                  <p className={styles.pergridtext}>
-                    The Creon AI Launchpad, an essential component of our
-                    initiative, represents a groundbreaking opportunity in the
-                    realm of AI and blockchain. It provides the first known
-                    platform for acquiring allocations in tokenized AI projects,
-                    offering our community of NFT and CREON token holders early
-                    access to innovative and promising AI endeavors.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
+        <div className={styles.respview}>
+          <SliderOne />
+        </div>
+
         {/* SECTION SIX */}
+
         <div className={styles.sectionsix}>
           <div className={styles.footerbackground}>
-            {aitools.map((tool, index) => (
+            <div className={styles.respviewtwo}>
+              {aitools.map((tool, index) => (
                 <div key={index} className={styles.lstsection}>
-                <div className={styles.lstctnbg}>
-                  <h1 className={styles.lastheader}>
-                    {tool.heading}
-                  </h1>
-                  <p className={styles.lstctntext}>
-                    {tool.text}
-                  </p>
+                  <div className={styles.lstctnbg}>
+                    <h1 className={styles.lastheader}>{tool.heading}</h1>
+                    <p className={styles.lstctntext}>{tool.text}</p>
+                  </div>
+                  <div className={styles.imagecontainer}>
+                    <Image
+                      src={tool.image}
+                      alt="logo"
+                      width={550}
+                      height={200}
+                      className={styles.image}
+                    />
+                  </div>
                 </div>
-                <div className={styles.imagecontainer}>
-                  <Image
-                    src={tool.image}
-                    alt="logo"
-                    width={550}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-              </div>
-            ))}
-            
+              ))}
+            </div>
             <div>
               <Footer />
             </div>
