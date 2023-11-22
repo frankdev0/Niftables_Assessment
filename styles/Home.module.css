@@ -441,9 +441,10 @@ padding-left: 6rem;
 
 
   .footerbackground{
-    background: black;
+    padding-left: 6rem;
+    padding-right: 6rem;
     object-fit: cover;
-    width: 100%;
+    width: 100vw;
     height: 100%;
   }
 
@@ -461,14 +462,12 @@ padding-left: 6rem;
     display: inline-block;
     background-color: #13171D;
     padding: 1rem;
-    height: 250px;
     width: 100%;
   }
 
   .sectionsix{
     display: flex;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    background-image: url("/footerbg.svg");
     margin-top: 5rem;
     background-color: #000000;
     padding-top: 2rem;
@@ -483,21 +482,25 @@ padding-left: 6rem;
       
     }
   
-    .imagecontainer {
-      width: 550px; /* Set the width as needed */
-      height: 250px; /* Set the fixed height as needed */
-      overflow: hidden;
-    }
+   
+
+    .lstctnbg,
+.imagecontainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+}
 
     .image {
+      flex: 1;
       object-fit: cover; /* Adjust based on your requirements */
-      width: 100%;
-      height: 100%;
     }
 
     .footer{
       padding-left: 6rem;
       color: #ffffff;
+      display: flex;
+      justify-content: space-between;
     }
 
     .footertext{
@@ -654,6 +657,36 @@ padding-left: 6rem;
             display: flex;
             justify-content: center;
           }
+
+          .footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 0rem;
+            
+          }
+
+          .lstsection {
+            order: 1;
+            flex-direction: column; 
+          }
+          
+        
+          .lstctnbg,
+          .imagecontainer {
+           order: -1;
+            width: 100%; 
+            
+          }
+          .footerbackground{
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          .sectionsix{
+            display: flex;
+            margin-top: 3rem;
+            }
     }
 
     @media  screen and (max-width: 768px) {
@@ -685,8 +718,13 @@ padding-left: 6rem;
 
       .visionimg{
         display: flex;
-        justify-content: center;
-        width: 50%;
+        justify-content: flex-end;
+        width: 100%;
+      }
+
+      .innovationtext{
+        text-align: end;
+        padding-right: 1rem;
       }
 
       /* .paragraph{

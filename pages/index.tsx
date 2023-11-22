@@ -312,7 +312,7 @@ export default function Home() {
                 <Image
                   src="/ai.svg"
                   alt="logo"
-                  width={400}
+                  width={550}
                   height={200}
                   className={styles.image}
                 />
@@ -368,12 +368,14 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-        {/* FOOTER SECTION */}
-        <div>
+            <div>
           <Footer />
         </div>
+          </div>
+         
+        </div>
+        {/* FOOTER SECTION */}
+        
       </div>
       {/* </main> */}
     </>
