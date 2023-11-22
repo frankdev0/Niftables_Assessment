@@ -1,5 +1,31 @@
 
-@import url('https://fonts.cdnfonts.com/css/satoshi');
+/* @import url('https://fonts.cdnfonts.com/css/satoshi'); */
+
+@font-face {
+  font-family: MonumentExtended-Regular;
+  src: local('MonumentExtended-Regular'),
+    url('/fonts/MonumentExtended-Regular.woff2') format('woff2'),
+    url('/fonts/MonumentExtended-Regular.woff2') format('woff');
+}
+
+@font-face {
+  font-family:Satoshi-Bold;
+  src: local('Satoshi-Bold'),
+        url('/fonts/Satoshi-Bold.woff2') format('woff2'),
+        url('/fonts/Satoshi-Bold.woff2') format('woff')
+}
+@font-face {
+  font-family:Satoshi-Regular;
+  src: local('Satoshi-Regular'),
+        url('/fonts/Satoshi-Regular.woff2') format('woff2'),
+        url('/fonts/Satoshi-Regular.woff2') format('woff')
+}
+@font-face {
+  font-family:Satoshi-Medium;
+  src: local('Satoshi-Medium'),
+        url('/fonts/Satoshi-Medium.woff2') format('woff2'),
+        url('/fonts/Satoshi-Medium.woff2') format('woff')
+}
 
 
 * {
@@ -10,19 +36,26 @@
   border: 0;
   text-decoration: none;
   list-style: none;
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi-Regular';
 }
 
 html,
 body {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi-Regular';
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p {
+  padding: 0;
+  margin: 0;
+  font-family:  'Satoshi-Regular', 'Satoshi-Bold', 'Satoshi-Medium' !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'MonumentExtended-Regular' !important;
   padding: 0;
   margin: 0;
 }
