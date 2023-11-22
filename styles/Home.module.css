@@ -69,6 +69,7 @@
 }
 
 .mobilemenu {
+  z-index: 4;
   position: absolute;
   top: 0;
   right: 0;
@@ -481,7 +482,7 @@
 
 .lstctnbg,
 .imagecontainer {
-  flex: 1;
+  
   display: flex;
   flex-direction: column;
 }
@@ -495,6 +496,7 @@
   color: #ffffff;
   display: flex;
   justify-content: space-between;
+  padding-top: 1rem;
 }
 
 .footertext {
@@ -694,9 +696,12 @@
     gap: 20px;
   }
   .creonheader {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.9rem;
     text-align: center;
+    margin: auto;
   }
 
   .buybtn {
@@ -722,7 +727,31 @@
   }
 
   .innovationtext {
-    text-align: end;
-    padding-right: 1rem;
+    text-align: right;
   }
+  .subheadertwo {
+    text-align: right;
+    padding-left: 5rem;
+  }
+  .footer {
+    padding-top: 4rem;
+  }
+
+  .mainheader {
+    padding-left: 1rem;
+  }
+
+  .sectiontwogrid {
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .faqheader {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 0.75rem;
+    padding-left: 0rem;
+    gap: 10px;
+  }
+ 
 }

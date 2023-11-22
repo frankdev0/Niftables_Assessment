@@ -39,6 +39,24 @@ export default function Home() {
     },
   ];
 
+  const aitools = [
+    {
+      heading:"AI Prospects, Market Size, and Development Pace",
+      text:"The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
+      image:"/ai.svg"
+    },
+    {
+      heading:"AI Tools and Market",
+      text:"The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
+      image:"/connect.svg",
+    },
+    {
+      heading:" AI, Crypto, and NFT Market",
+      text:"The AI market is one of the most dynamically growing areas of technology. According to reports, the global AI market is expected to reach $190.61 billion by 2025, with a CAGR (Compound Annual Growth Rate) of 36.6%. The key drivers behind this growth include advancements in machine learning, increasing demand for big data analytics, and growing adoption of AI technology across various sectors such as healthcare, finance, and transportation.",
+      image:"/crypto.svg",
+    }
+  ]
+
   return (
     <>
       <Head>
@@ -279,82 +297,28 @@ export default function Home() {
         {/* SECTION SIX */}
         <div className={styles.sectionsix}>
           <div className={styles.footerbackground}>
-            <div className={styles.lstsection}>
-              <div className={styles.lstctnbg}>
-                <h1 className={styles.lastheader}>
-                  AI Prospects, Market Size, and Development Pace
-                </h1>
-                <p className={styles.lstctntext}>
-                  The AI market is one of the most dynamically growing areas of
-                  technology. According to reports, the global AI market is
-                  expected to reach $190.61 billion by 2025, with a CAGR
-                  (Compound Annual Growth Rate) of 36.6%. The key drivers behind
-                  this growth include advancements in machine learning,
-                  increasing demand for big data analytics, and growing adoption
-                  of AI technology across various sectors such as healthcare,
-                  finance, and transportation.
-                </p>
+            {aitools.map((tool, index) => (
+                <div key={index} className={styles.lstsection}>
+                <div className={styles.lstctnbg}>
+                  <h1 className={styles.lastheader}>
+                    {tool.heading}
+                  </h1>
+                  <p className={styles.lstctntext}>
+                    {tool.text}
+                  </p>
+                </div>
+                <div className={styles.imagecontainer}>
+                  <Image
+                    src={tool.image}
+                    alt="logo"
+                    width={550}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
               </div>
-              <div className={styles.imagecontainer}>
-                <Image
-                  src="/ai.svg"
-                  alt="logo"
-                  width={550}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-            </div>
-            <div className={styles.lstsection}>
-              <div className={styles.lstctnbg}>
-                <h1 className={styles.lastheader}>AI Tools and Market</h1>
-                <p className={styles.lstctntext}>
-                  The AI market is one of the most dynamically growing areas of
-                  technology. According to reports, the global AI market is
-                  expected to reach $190.61 billion by 2025, with a CAGR
-                  (Compound Annual Growth Rate) of 36.6%. The key drivers behind
-                  this growth include advancements in machine learning,
-                  increasing demand for big data analytics, and growing adoption
-                  of AI technology across various sectors such as healthcare,
-                  finance, and transportation.
-                </p>
-              </div>
-              <div className={styles.imagecontainer}>
-                <Image
-                  src="/connect.svg"
-                  alt="logo"
-                  width={550}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-            </div>
-            <div className={styles.lstsection}>
-              <div className={styles.lstctnbg}>
-                <h1 className={styles.lastheader}>
-                  AI, Crypto, and NFT Market
-                </h1>
-                <p className={styles.lstctntext}>
-                  The AI market is one of the most dynamically growing areas of
-                  technology. According to reports, the global AI market is
-                  expected to reach $190.61 billion by 2025, with a CAGR
-                  (Compound Annual Growth Rate) of 36.6%. The key drivers behind
-                  this growth include advancements in machine learning,
-                  increasing demand for big data analytics, and growing adoption
-                  of AI technology across various sectors such as healthcare,
-                  finance, and transportation.
-                </p>
-              </div>
-              <div className={styles.imagecontainer}>
-                <Image
-                  src="/crypto.svg"
-                  alt="logo"
-                  width={550}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-            </div>
+            ))}
+            
             <div>
               <Footer />
             </div>
